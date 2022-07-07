@@ -1,0 +1,374 @@
+/* --- Addons --- */
+@import url("https://mr-miner1.github.io/Better-Badges/src/badges.css");
+@import url("https://discordstyles.github.io/RadialStatus/dist/RadialStatus.css");
+@import url("https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css");
+
+/* --- Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+/* --- Discord Variables --- */
+:root.theme-dark, .theme-light {
+  --header-primary: #fff;
+  --header-secondary: #b9bbbe;
+  --text-normal: #f7f4f4;
+  --text-link: hsl(197,calc(var(--saturation-factor, 1)*100%),47.8%);
+  --text-link-low-saturation: hsl(197,calc(var(--saturation-factor, 1)*100%),52.9%);
+  --text-positive: hsl(139,calc(var(--saturation-factor, 1)*66.8%),58.6%);
+  --text-warning: hsl(38,calc(var(--saturation-factor, 1)*95.7%),54.1%);
+  --text-danger: hsl(359,calc(var(--saturation-factor, 1)*82.6%),59.4%);
+  --channels-default: #ddd5d3;
+  --interactive-normal: #EAE1DF;
+  --interactive-hover: #EAE1DF;
+  --interactive-active: #fff;
+  --interactive-muted: #505355;
+  --background-primary: transparent; /*transparent for background*/
+  --background-secondary: transparent;
+  --background-secondary-alt: transparent;
+  --background-tertiary: transparent;
+  --background-accent: #4d6a91;
+  --background-floating: #18191c;
+  --background-modifier-hover: rgba(50, 53, 85, 0.322);
+  --background-modifier-active: rgba(56, 62, 97, 0.37);
+  --background-modifier-selected: rgba(42, 51, 75, 0.301);
+  --background-modifier-accent: rgba(255, 255, 255, 0.2);
+  --background-mentioned: rgba(144, 139, 224, 0.35);
+  --background-mentioned-hover: rgba(144, 139, 224, 0.55);
+  --background-message-hover: rgba(4, 4, 5, 0.35);
+  --background-help-warning: rgba(250, 166, 26, 0.1);
+  --background-help-info: rgba(0, 176, 244, 0.1);
+  --info-positive-text: #fff;
+  --info-warning-text: #fff;
+  --info-danger-text: #fff;
+  --info-help-background: hsla(197,calc(var(--saturation-factor, 1)*100%),47.8%,0.1);
+  --info-help-foreground: hsl(197,calc(var(--saturation-factor, 1)*100%),47.8%);
+  --info-help-text: #fff;
+  --status-warning-text: #000;
+  --scrollbar-thin-thumb: rgba(44, 49, 71, 0.658);
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-thumb: rgba(67, 79, 134, 0.658);
+  --scrollbar-auto-track: rgba(24, 28, 51, 0.7);
+  --scrollbar-auto-scrollbar-color-thumb: rgba(67, 79, 134, 0.555);
+  --elevation-stroke: 0 0 0 1px rgba(4,4,5,0.15);
+  --elevation-low: 0 1px 0 rgba(4,4,5,0.3),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+  --elevation-medium: 0 4px 4px rgba(0,0,0,0.16);
+  --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
+  --logo-primary: #fff;
+  --focus-primary: var(--color-brand);
+  --radio-group-dot-foreground: var(--color-brand-lighter);
+  --guild-header-text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  --channeltextarea-background: var(--background-primary);
+  --channeltextarea-background-hover: var(--background-secondary);
+  --activity-card-background: #233550;
+  --textbox-markdown-syntax: #8e9297;
+
+  --text-warning: var(--color-orange);
+  --text-danger: var(--color-red);
+  --info-positive-background: rgba(56, 172, 93, 0.8);
+  --info-positive-foreground: var(--color-green);
+  --info-warning-background: rgba(255, 199, 102, 0.8);
+  --info-warning-foreground: var(--color-orange);
+  --info-danger-background: rgba(241, 66, 69, 0.8);
+  --info-danger-foreground: var(--color-red);
+  --status-positive-background: var(--color-green);
+  --status-positive-text: #fff;
+  --status-warning-background: var(--color-orange);
+  --status-danger-background: var(--color-red);
+  --status-danger-text: #fff;
+
+  --font-primary: Inter, 'Ubuntu', sans-serif;
+  --font-display: Inter, 'Ubuntu', sans-serif;
+
+/* --- Addons Variables --- */
+
+  /* --- Radial Statut --- */
+  --rs-small-spacing: 2px; 
+  --rs-medium-spacing: 3px;
+  --rs-large-spacing: 4px; 
+
+  --rs-small-width: 2px; 
+  --rs-medium-width: 3px;
+  --rs-large-width: 4px;
+
+  --rs-avatar-shape: 50%;
+
+  --rs-online-color: #43b581;
+  --rs-idle-color: #faa61a; 
+  --rs-dnd-color: #f04747; 
+  --rs-offline-color: #636b75; 
+  --rs-streaming-color: #643da7;
+  --rs-invisible-color: #747f8d; 
+  --rs-phone-color: var(--rs-online-color);
+
+  --rs-phone-visible: block;
+
+  /* --- Horizontal Server List --- */
+  --HSL-server-icon-size: 45px;  /* Size of the server icons | DEFAULT: 40px */
+  --HSL-server-spacing: 10px;  /* Spacing between each server icon | DEFAULT: 10px */
+  --HSL-server-direction: column; /* Direct of the server list. | Options: column, column-reverse | DEFAULT: column */
+
+  /* --- Better Badges --- */
+  --badge-size-patch: 22px; /*discord defualt = 18px, theme defualt = 22px;*/
+  --badge-margin: 1.5px; /*discord default = 2px, theme defualt = 1.5px*/
+  --badges-everywhere-size: 15px; /*default = 15px*/
+
+/* --- Settings Modal --- */
+  --settingsmodalbackground: transparent;
+  --settingsmodalwidth: 1100px;
+  --settingsmodalheight: 90vh;
+
+/* --- Channel Indicator --- */
+  --indicator-hovered: rgba(79, 84, 92, 0.25);
+  --indicator-rounding: 0;
+  --indicator-border-info: 2px solid;
+
+  --indicator-selected: 112, 135, 215;
+  --indicator-selected-border: rgba(var(--indicator-selected));
+  --indicator-selected-background: rgba(var(--indicator-selected), 0.1);
+  --indicator-selected-hover: rgba(var(--indicator-selected), 0.18);
+
+  --indicator-unread: 255, 255, 255;
+  --indicator-unread-border: rgba(var(--indicator-unread), 0.6);
+  --indicator-unread-background: rgba(var(--indicator-unread), 0.01);
+
+  --indicator-connected: 67, 181, 129;
+  --indicator-connected-border: rgba(var(--indicator-connected));
+  --indicator-connected-background: rgba(var(--indicator-connected), 0.1);
+  --indicator-connected-hover: rgba(var(--indicator-connected), 0.18);
+
+/* --- Radial Status --- */
+  --rs-small-spacing: 2px;
+  --rs-medium-spacing: 3px;
+  --rs-large-spacing: 4px;
+
+  --rs-small-width: 2px;
+  --rs-medium-width: 3px;
+  --rs-large-width: 4px;
+
+  --rs-avatar-shape: 50%;
+
+  --rs-online-color: #43b581;
+  --rs-idle-color: #faa61a;
+  --rs-dnd-color: #f04747; 
+  --rs-offline-color: #636b75; 
+  --rs-streaming-color: #643da7; 
+  --rs-invisible-color: #747f8d; 
+  --rs-phone-color: var(--rs-online-color); 
+
+  --rs-phone-visible: block; 
+  --container-color: var(--background-floating);
+}
+
+/* --- Background --- */
+.appMount-2yBXZl {
+	background-image: var(--background) !important;
+	background-size: cover !important;
+}
+
+.theme-dark .container-2cd8Mz {
+  background-color: var(--transparent-color);
+}
+
+.theme-dark .inset-SbsSFp {
+  background-color: var(--call-color);
+}
+
+.wrapper-2RrXDg {
+  background-color: var(--call-color);
+}
+
+.container-ZMc96U.themed-Hp1KC_ {
+  background : var(--transparent-color);
+}
+
+.applicationStore-2nk7Lo {
+  background-color: var(--transparent-color);
+}
+
+/* --- Check Button --- */
+.container-2nx-BQ {
+  background-color: var(--principal-color);
+  opacity: 0.1;
+}
+
+/* --- Tags --- */
+.botTagRegular-kpctgU {
+  background-color: var(--principal-color);
+}
+
+/* --- User Banner --- */
+.popoutBanner-3cqRD9 {
+  width: 300px;
+  height: 120px;
+}
+
+.banner-1YaD3N {
+  background-image: var(--banner-background);
+  background-size: 120%;
+}
+
+.wrapper-1gVUIN.minimum-fXpVNc {
+  background-color: var(--call-color);
+}
+
+.avatarPositionNormal-2jWoC2 {
+  top: 76px;
+}
+
+.profileBanner-1owKI5 {
+  max-width: 600px;
+  height: 240px;
+}
+
+/* --- Attribution des Rôles --- */
+.container-2O1UgZ {
+  background-color: var(--call-color);
+}
+
+/* --- Panel Nitros Desc --- */
+.theme-dark .feature-2IUcBI {
+  background-color: var(--call-color);
+}
+
+.giftWrapper-2Rmqr2 {
+  background-color: var(--call-color);
+}
+
+.marketingRefreshTier2Cta-2dN2zP {
+  background-color: var(--call-color);
+  padding: 10px 5px;
+  border-radius: 10px;
+}
+
+.marketingRefreshSectionTier1-1chtWC {
+  border-top: none;
+  background-color: var(--call-color);
+  padding: 15px 10px;
+  border-radius: 10px;
+}
+
+/* --- Settings --- */
+.settingsBanner-1eDJ5w {
+  height: 196px;
+}
+
+.avatar-3mTjvZ {
+  top: 156px;
+}
+
+.avatar-3mTjvZ {
+  border: 7px solid var(--transparent-color);
+  background-color: var(--transparent-color);
+}
+
+.accountProfileCard-lbN7n- {
+  background-color: var(--call-color);
+}
+
+.background-3d_SjE {
+  background-color: var(--secondary-color);
+}
+
+.marginBottom40-fvAlAV {
+  background-color: var(--call-color);
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.itemFilled-1cPbtg {
+  background-color: var(--call-color);
+}
+
+.item-2idW98[aria-checked=true] {
+  background-color: var(--secondary-color);
+}
+
+.accountList-Wii_T5 {
+  background-color: var(--call-color);
+}
+
+.connection-YOVI9j {
+  background-color: var(--call-color);
+}
+
+.connectionHeader-Ixbb1s {
+  background-color: var(--principal-color);
+}
+
+.marginTop40-Q4o1tS {
+  background-color: var(--call-color);
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.divider-_0um2u {
+  padding: 0;
+}
+
+/* --- Panel émoji / gifs ... --- */
+.contentWrapper-3vHNP2 {
+  background-color: var(--call-color);
+}
+
+/* --- Messages --- */
+.timestampVisibleOnHover-9PEuZS {
+  opacity: 1;
+}
+
+.wrapper-2vIMkT {
+  background-color: var(--call-color);
+}
+
+.cozy-VmLDNB .messageContent-2t3eCI {
+  max-width: 90%;
+}
+
+.wrapper-30-Nkg {
+  background-color: var(--background-message);
+}
+
+/* --- Embeds --- */
+.embedFull-1HGV2S {
+  border-right: 4px solid var(--principal-color);
+  border-left: 4px solid var(--principal-color);
+  background: var(--secondary-color);
+}
+
+/* --- Fils / épignlement  --- */
+.container-18GwIk, .messagesPopoutWrap-3zryHW {
+  background-color: var(--call-color);
+}
+
+.header-3_zmOb, .header-1w9Q93 {
+  background-color: var(--principal-color);
+}
+
+.messageGroupWrapper-1jf_7C {
+  background-color: var(--secondary-color);
+}
+
+/* --- Better Badges Patch --- */
+  /* Booster badges */
+  div:hover > img[src="/assets/ca18353be0e57a2b3b3132fa1c08d6b4.svg"],
+  div:hover > img[src="/assets/22f99ed6e34eaca48950254c70f8fe8d.svg"],
+  div:hover > img[src="/assets/4a2618502278029ce88adeea179ed435.svg"],
+  div:hover > img[src="/assets/fbafa6adb7c49a6a2c3822521ff2af2f.svg"],
+  div:hover > img[src="/assets/0599f90e32c15b532647163edd72f70a.svg"],
+  div:hover > img[src="/assets/e07c08cdc72bcc78b69c76d2c7ceb344.svg"],
+  div:hover > img[src="/assets/c7f26927db5e7806790f4e968038630a.svg"],
+  div:hover > img[src="/assets/c6d88d1d12afe03bdc4ebb747f8d196b.svg"],
+  div:hover > img[src="/assets/d96ed283b74de75692487b7499fb8d09.svg"] {
+    content: url("https://cdn.discordapp.com/emojis/845808489238757426.gif");
+  }
+  img[src="/assets/ca18353be0e57a2b3b3132fa1c08d6b4.svg"],
+  img[src="/assets/22f99ed6e34eaca48950254c70f8fe8d.svg"],
+  img[src="/assets/4a2618502278029ce88adeea179ed435.svg"],
+  img[src="/assets/fbafa6adb7c49a6a2c3822521ff2af2f.svg"],
+  img[src="/assets/0599f90e32c15b532647163edd72f70a.svg"],
+  img[src="/assets/e07c08cdc72bcc78b69c76d2c7ceb344.svg"],
+  img[src="/assets/c7f26927db5e7806790f4e968038630a.svg"],
+  img[src="/assets/c6d88d1d12afe03bdc4ebb747f8d196b.svg"],
+  img[src="/assets/d96ed283b74de75692487b7499fb8d09.svg"] {
+    height: calc(var(--badge-size-patch) - 2.59px) !important;
+    width: calc(var(--badge-size-patch) - 2.59px) !important;
+    transform: translate(0.5px, 1.9px);
+  }
